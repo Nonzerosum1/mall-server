@@ -1,0 +1,17 @@
+<flows>
+	<flow id="1" name="script" in="true" type="pri.id:Integer">
+		pri.id = 6;
+		userService.deleteByPK(pri.id);				return 10;
+		 
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{			"msg":"删除成功"
+		}
+	</flow>
+	
+	<flow id="99" name="view" fail="999" desc="异常视图">
+		{			"msg":"删除失败"
+		}
+	</flow>
+</flows>

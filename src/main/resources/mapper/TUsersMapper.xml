@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sunline.demo.mapper.TUsersMapper">
+<!--selectById,deleteById,updateById,insert is auto create, <resultMap id="BaseResultMap" is auto create -->
+	<select id="slectTUsersByMobile" parameterType="String" resultType="TUsers">
+		SELECT * 
+		FROM t_users 
+		WHERE mobile = #{mobile} and del = 0
+	</select>
+	
+	<select id="slectTUsersByName" parameterType="String" resultType="TUsers">
+		SELECT * 
+		FROM t_users 
+		WHERE nick_name = #{name} and del = 0
+	</select>
+	
+	<select id="getMaxUserId" parameterType="String" resultType="TUsers">
+		SELECT * 
+		FROM t_users 
+		WHERE user_id = (SELECT MAX(user_id) FROM t_users)
+	</select>
+	
+	<select id="slectTUsersLogin" parameterType="TUsers" resultType="TUsers">
+		SELECT * 
+		FROM t_users 
+		WHERE nick_name = #{nickName} and login_password = #{loginPassword} and del = 0
+	</select>
+
+
+</mapper>

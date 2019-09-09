@@ -1,0 +1,11 @@
+<flows desc="进入首界面初始化得到数据">
+	<flow id="1" name="script" in="true">
+		var data = pri.jsonsObj;
+		
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{
+		}
+	</flow>
+</flows>

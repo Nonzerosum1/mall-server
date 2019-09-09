@@ -1,0 +1,24 @@
+<flows>
+	<flow id="1" name="script" in="true" type="pri.id:Integer|pri.name:String">
+		pri.id = 2;
+		pri.name = "罗斯";
+		
+		var user = new User();
+		user.setId(pri.id);
+		user.setName(pri.name);
+		
+		pri.res:int = userService.update(user);
+		if(pri.res == 0){			return 99;		}else{			return 10;		}
+		
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{			"msg":"更新成功"
+		}
+	</flow>
+	
+	<flow id="99" name="view" fail="999" desc="异常视图">
+		{			"msg":"更新失败"
+		}
+	</flow>
+</flows>

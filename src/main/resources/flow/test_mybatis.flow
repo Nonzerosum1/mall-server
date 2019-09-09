@@ -1,0 +1,49 @@
+<flows>
+	/*
+	根据id来查询数据
+	*/
+/*	<flow id="1" name="script" in="true">
+	    pri.user = userService.selectById(2);
+		log.info("user:"+pri.user);
+		return 10;
+	</flow>
+
+	<flow id="10" name="view">
+		{
+			"id":pri.user.id,
+			"name":pri.user.name,
+			"age":pri.user.age,
+			"address":pri.user.address,
+			"createTime":pri.user.createTime
+			
+		}
+	</flow>*/
+	
+	/*
+	查询所有数据
+	*/
+	<flow id="1" name="script" in="true">
+		
+	    pri.list = userService.selectAll();
+		log.info("user:"+pri.user);
+		if(pri.list.size() == 0){			return 99;		}else{			return 10;		}
+		
+	</flow>
+
+	<flow id="10" name="script">
+		var jsons = {};
+		jsons.rows = [];
+		pri.list.forEach(function(o){			log.debug(o);			jsons.rows.push({name:o.name,age:o.age,sex:o.sex,address:o.address});		});
+		
+		pri.view = JSON.stringify(jsons);
+	</flow>
+	
+	
+	<flow id="99" name="view">
+		{
+			"msg":"查询失败"
+			
+		}
+	</flow>
+	
+</flows>

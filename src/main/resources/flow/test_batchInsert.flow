@@ -1,0 +1,24 @@
+<flows>
+	<flow id="1" name="script" in="true" type="pri.name:String|pri.age:Integer|pri.sex:String|pri.address:String">
+		pri.name = "jack";
+		pri.age = 100;
+		pri.sex = "M";
+		pri.address = "los";
+		pri.createTime:Date = new Date();
+		var user1 = new User(pri.name,pri.age,pri.sex,pri.address,pri.createTime);
+		var user2 = new User(pri.name,pri.age,pri.sex,pri.address,pri.createTime);
+		
+		var list = new ArrayList<User>();
+		list.add(user1);
+		list.add(user2);
+		
+		pri.res:Integer = userService.batchInsert(list);
+		if(pri.res == 0){			pri.view = "插入失败";		}else{			return 10;		}
+		
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{			"msg":"插入成功"
+		}
+	</flow>
+</flows>

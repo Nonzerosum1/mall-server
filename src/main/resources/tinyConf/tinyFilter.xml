@@ -1,0 +1,4 @@
+<tiny>
+<!--    <filter type="tml">tmlServerSessionTimeOutFilter</filter>-->
+	<filter type="tml">corsFilter</filter>
+</tiny>

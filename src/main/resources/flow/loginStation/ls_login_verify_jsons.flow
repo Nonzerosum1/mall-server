@@ -1,0 +1,24 @@
+<flows desc="登录网站检查">
+	<flow id="1" name="script" in="true" desc="数据校验">
+		var data = pri.jsonsObj;
+		if(tls.isNull(data.userName) || tls.isNull(data.password)){			tls.returnFun("000001",ct);
+			return;		}
+		pri.userName = data.userName;
+		pri.password = data.password;
+		return 10;
+	</flow>
+
+	<flow id="10" name="script" desc="数据校验">
+		var tUser:TUsers = new TUsers();
+		tUser.setNickName(pri.nickName);
+		tUser.setLoginPassword(pri.password);
+		var tUserLog = tUsersService.slectTUsersLogin(tUser);
+		
+		if(tls.isNull(tUserLog)){			tls.returnFun("402004", ct);
+			return;		}
+		pub.userId = tUserLog.userId;
+		pub.nickName = tUserLog.nickName;
+		tls.returnFun("000000", ct);
+		return;
+	</flow>
+</flows>

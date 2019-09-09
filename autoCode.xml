@@ -1,0 +1,6 @@
+<tiny>
+	<mybatis deal="true" tableHead="">
+		<jdbcConnection username="root" password="123" connectionURL="jdbc:mysql://127.0.0.1:3306/db_gradu" driverClass="com.mysql.jdbc.Driver"/>
+		<packagePath value="cn.sunline.demo"/>
+	</mybatis>
+</tiny>

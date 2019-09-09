@@ -1,0 +1,144 @@
+<flows>
+	<flow id="1" name="script" in="true">
+		var data = pri.jsonsObj;
+		if((tls.isNull(data.name) || tls.isNull(data.recommend) ||
+		tls.isNull(data.quantityunit) || tls.isNull(data.catesort) ||
+		tls.isNull(data.keyword) || tls.isNull(data.catedesc) ||
+		tls.isNull(data.whethershow) || tls.isNull(data.whetherbar) ||
+		tls.isNull(data.markCate) /*|| tls.isNull(data.imgDataUrl)*/) && 
+		(tls.isNull(data.markCate) || tls.isNull(data.cateId)) &&
+		(tls.isNull(data.markCate))){			tls.returnFun("000001",ct);
+			return;		}
+		pri.typeName = data.name;
+		pri.recommend = data.recommend;
+		pri.id = DataUtil.getUUID();
+		pri.typeId = DataUtil.generateNumber();
+		pri.markCate = data.markCate;
+		pri.cateId = data.cateId;
+		
+		pri.quantityUnit = data.quantityunit;
+		pri.cateSort = data.catesort;
+		pri.keyWord = data.keyword;
+		pri.cateDesc = data.catedesc;
+		pri.whetherShow = data.whethershow;
+		pri.whetherBar = data.whetherbar;
+		pri.imgDataUrl = data.imgDataUrl;
+		pri.cateDetailId = data.cateDetailId;
+		
+		if(pri.markCate == "init_cate"){			return category_init;		}else if(pri.markCate == "delete_cate"){			return category_delete;		}else if(pri.markCate == "update_cate"){			return category_update;		}else if(pri.markCate == "add_cate"){			return category_add;		}
+	</flow>
+	
+	<flow id="category_add" name="script">
+		var tGoodsTypeExist = tGoodsTypeService.checkCateExisted(pri.typeName);
+		if(!tls.isNull(tGoodsTypeExist)){			tls.returnFun("290010",ct);
+			return;		}
+		var tGoodsType:TGoodsType = new TGoodsType();
+		tGoodsType.setId(pri.id);
+		tGoodsType.setCreateDate(new Date());
+		tGoodsType.setModifyDate(new Date());
+		tGoodsType.setTypeId(pri.typeId);
+		tGoodsType.setTypeName(pri.typeName);
+		tGoodsType.setTypeParId(pri.recommend);
+		tGoodsType.setDel("0");
+		tGoodsTypeService.insert(tGoodsType);
+		
+		var tGoodsTypeDetail:TGoodsTypeDetail = new TGoodsTypeDetail();
+		tGoodsTypeDetail.setId(pri.id);
+		tGoodsTypeDetail.setCreateDate(new Date());
+		tGoodsTypeDetail.setModifyDate(new Date());
+		tGoodsTypeDetail.setTypeId(pri.typeId);
+		tGoodsTypeDetail.setQuantityUnit(pri.quantityUnit);
+		tGoodsTypeDetail.setNavigationBar(pri.whetherBar);
+		tGoodsTypeDetail.setIsShow(pri.whetherShow);
+		//tGoodsTypeDetail.setSortManage(pri.id);
+		//tGoodsTypeDetail.setGoodsNum(pri.id);
+		tGoodsTypeDetail.setCateImage(pri.imgDataUrl);
+		tGoodsTypeDetail.setCateSort(pri.cateSort);
+		tGoodsTypeDetail.setKeyWord(pri.keyWord);
+		tGoodsTypeDetail.setCateDesc(pri.cateDesc);
+		tGoodsTypeDetail.setDel("0");
+		tGoodsTypeDetailService.insert(tGoodsTypeDetail);
+		tls.returnFun("000000", ct);
+		return;
+	</flow>
+	
+	<flow id="category_init" name="script">
+		pri.catesList = tGoodsTypeService.getAlltype();
+		var robj = {};
+		robj.categorysList = [];
+		pri.catesList.forEach(function(obj){			var cates = {};
+			var tGoodSTypeDetail:TGoodsTypeDetail = tGoodsTypeDetailService.getGoodTypeDetailByTypeId(obj.typeId);
+			cates.cateId = obj.id;
+			cates.typeId = obj.typeId;
+			cates.typeName = obj.typeName;
+			cates.typeParId = obj.typeParId;
+			
+			cates.cateDetailId = tGoodSTypeDetail.id;
+			cates.quantityunit = tGoodSTypeDetail.quantityUnit;
+			cates.catesort = tGoodSTypeDetail.cateSort;
+			cates.keyword = tGoodSTypeDetail.keyWord;
+			cates.catedesc = tGoodSTypeDetail.cateDesc;
+			cates.whethershow = tGoodSTypeDetail.isShow;
+			cates.whetherbar = tGoodSTypeDetail.navigationBar;
+			
+			robj.categorysList.push(cates);		});
+		
+		tls.returnFun("000000", robj, ct);
+		return;
+	</flow>
+	
+	<flow id="category_delete" name="script">
+		var res:Integer = tGoodsTypeService.deleteByPK((pri.cateId).toString());
+		
+		if(!tls.isNull(res)){
+			if(res > 0){
+				tls.returnFun("000000",ct);
+				return;
+			}else{
+				tls.returnFun("408005",ct);
+				return;
+			}
+		}else{
+			tls.returnFun("408005",ct);
+			return;
+		}
+		
+	</flow>
+	
+	<flow id="category_update" name="script">
+		var tGoodsType:TGoodsType = new TGoodsType();
+		tGoodsType.setModifyDate(new Date());
+		tGoodsType.setId(pri.cateId);
+		tGoodsType.setTypeName(pri.typeName);
+		tGoodsType.setTypeParId(pri.recommend);
+		var res:Integer = tGoodsTypeService.update(tGoodsType);
+		
+		var tGoodsTypeDetail:TGoodsTypeDetail = new TGoodsTypeDetail();
+		tGoodsTypeDetail.setModifyDate(new Date());
+		tGoodsTypeDetail.setId(pri.cateDetailId);
+		tGoodsTypeDetail.setQuantityUnit(pri.quantityUnit);
+		tGoodsTypeDetail.setNavigationBar(pri.whetherBar);
+		tGoodsTypeDetail.setIsShow(pri.whetherShow);
+		//tGoodsTypeDetail.setSortManage(pri.id);
+		//tGoodsTypeDetail.setGoodsNum(pri.id);
+		tGoodsTypeDetail.setCateImage(pri.imgDataUrl);
+		tGoodsTypeDetail.setCateSort(pri.cateSort);
+		tGoodsTypeDetail.setKeyWord(pri.keyWord);
+		tGoodsTypeDetail.setCateDesc(pri.cateDesc);
+		var resDetail:Integer = tGoodsTypeDetailService.update(tGoodsTypeDetail);
+		
+		if(!tls.isNull(res) && !tls.isNull(resDetail)){
+			if(res > 0 && resDetail > 0){
+				tls.returnFun("000000",ct);
+				return;
+			}else{				log.info("=====================>1");
+				tls.returnFun("408006",ct);
+				return;
+			}
+		}else{			log.info("=====================>2");
+			tls.returnFun("408006",ct);
+			return;
+		}
+		
+	</flow>
+</flows>

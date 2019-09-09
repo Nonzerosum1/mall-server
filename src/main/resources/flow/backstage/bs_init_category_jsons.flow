@@ -1,0 +1,55 @@
+<flows>
+	<flow id="1" name="script" in="true">
+		var data = pri.jsonsObj;
+		if(tls.isNull(data.name) || tls.isNull(data.recommend)){
+			tls.returnFun("000001",ct);
+			return;
+		}
+		pri.typeName = data.name;
+		pri.recommend = data.recommend;
+		pri.id = DataUtil.getUUID();
+		pri.typeId = DataUtil.generateNumber();
+		pri.markCate = data.markCate;
+/*		if(pri.markCate == "init_cate"){
+			return category_init;
+		}*/
+		return category_add;
+	</flow>
+	
+	<flow id="category_add" name="script">
+		var tGoodsTypeExist = tGoodsTypeService.checkCateExisted(pri.typeName);
+		if(!tls.isNull(tGoodsTypeExist)){
+			tls.returnFun("290010",ct);
+			return;
+		}
+		var tGoodsType:TGoodsType = new TGoodsType();
+		tGoodsType.setId(pri.id);
+		tGoodsType.setCreateDate(new Date());
+		tGoodsType.setModifyDate(new Date());
+		tGoodsType.setTypeId(pri.typeId);
+		tGoodsType.setTypeName(pri.typeName);
+		tGoodsType.setTypeParId(pri.recommend);
+		tGoodsType.setDel("0");
+		tGoodsTypeService.insert(tGoodsType);
+		tls.returnFun("000000", ct);
+		return;
+	</flow>
+	
+/*	<flow id="category_init" name="script">
+		var catesList:List = tGoodsTypeService.getAlltype();
+		
+		var robj = {};
+		robj.categorysList = [];
+		catesList.forEach(function(obj){
+			var cates = {};
+			cates.id = obj.id;
+			cates.typeId = obj.typeId;
+			cates.typeName = obj.typeName;
+			cates.typeParId = obj.typeParId;
+			robj.categorysList.push(cates);
+		});
+		
+		tls.returnFun("000000", robj, ct);
+		return;
+	</flow>*/
+</flows>

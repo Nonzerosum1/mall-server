@@ -1,0 +1,59 @@
+<flows desc="上传用户数据">
+	<flow id="1" name="script" in="true" desc="数据校验">
+		var data = pri.jsonsObj;
+		if(tls.isNull(data.nickName) || tls.isNull(data.mobile) || tls.isNull(data.password)){			tls.returnFun("000001",ct);
+			return;		}
+		
+		pri.nickName = data.nickName;
+		pri.mobile = data.mobile;
+		pri.password = data.password;
+		pri.email = data.email;
+		pri.address = data.address;
+		pri.dateOfBirth = data.dateOfBirth;
+		pri.gender = data.gender;
+		pri.mobilePhone = data.mobilePhone;
+		pri.status = data.status;
+		pri.id = DataUtil.getUUID();
+		return check;
+	</flow>
+	
+	<flow id="check" name="script" desc="数据校验">
+		var tUsersByMobile:TUsers = tUsersService.slectTUsersByMobile((pri.mobile).toString());
+		var tUsersByName:TUsers = tUsersService.slectTUsersByName((pri.nickName).toString());
+		
+		//查询数据库查看用户是否存在
+		if(!tls.isNull(tUsersByMobile) || !tls.isNull(tUsersByName)){			tls.returnFun("290009",ct);
+			return;		}
+		pri.userId = cust.getCustomerID();
+		
+				
+		var tUser:TUsers = new TUsers();
+		tUser.setId(pri.id);
+		tUser.setCreateDate(new Date());
+		tUser.setModifyDate(new Date());
+		tUser.setNickName(pri.nickName);
+		tUser.setUserId(Long.parseLong(pri.userId));
+		tUser.setMobile(pri.mobile);
+		tUser.setEmail(pri.email);
+		
+		if(!tls.isNull(pri.dateOfBirth)){
+			pri.dateOfBirthFormat = DataUtil.simpleDateParse(pri.dateOfBirth);
+			tUser.setDateOfBirth(pri.dateOfBirthFormat);
+		}
+		tUser.setLoginPassword((pri.password).toString());
+		tUser.setGender(pri.gender);
+		tUser.setAddress(pri.address);
+		tUser.setMobilePhone(pri.mobilePhone);
+		tUser.setStatus(pri.status);
+		tUser.setDel("0");
+		tUsersService.insert(tUser);
+		
+		tls.returnFun("000000",ct);
+		return;
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{
+		}
+	</flow>
+</flows>

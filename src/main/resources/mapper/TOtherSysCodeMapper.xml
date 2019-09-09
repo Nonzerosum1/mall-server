@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sunline.demo.mapper.TOtherSysCodeMapper">
+<!--selectById,deleteById,updateById,insert is auto create, <resultMap id="BaseResultMap" is auto create -->
+	<select id="getAllSysCode" parameterType="String" resultType="TOtherSysCode">
+		SELECT erorcd, erortx, data_language 
+		FROM t_other_sys_code 
+		WHERE sys_n='A' and t_status = '0' and del = 0
+	</select>
+
+</mapper>

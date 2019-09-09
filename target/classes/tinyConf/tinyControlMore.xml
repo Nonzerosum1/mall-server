@@ -1,0 +1,124 @@
+<tiny desc="多步骤的请求安全控制">
+
+	
+	<!-- rcode default 000000 -->
+<!-- 	<control trans="group1">
+		<url name="reg_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="reg_ocr_verify_jsons.tml" lasturl="reg_otp_check_jsons.tml" id="1"/>
+		<url name="reg_passport_up_jsons.tml" lasturl="reg_ocr_verify_jsons.tml" id="1"/>
+	</control> -->
+	
+<!-- 	<control trans="group2">
+		<url name="reg_simcomp_jsons.tml" lasturl="" id="1"/>
+		<url name="cm_syc_verify_times_jsons.tml" lasturl="reg_simcomp_jsons.tml" id="1"/>
+		<url name="reg_ks_cust_jsons.tml" lasturl="cm_syc_verify_times_jsons.tml" id="1"/>
+	</control> -->
+	
+<!-- 	<control trans="group3">
+		<url name="reg_simcomp_jsons.tml" lasturl="" id="1"/>
+		<url name="cm_syc_verify_times_jsons.tml" lasturl="reg_simcomp_jsons.tml" id="1"/>
+		<url name="reg_cust_jsons.tml" lasturl="cm_syc_verify_times_jsons.tml" id="1"/>
+	</control> -->
+	
+<!--	<control trans="group4">
+		<url name="reg_simcomp_jsons.tml" id="1" rcode="000000" robj="[{'key':'faceSimResult','value':true}]"/>
+		<url name="cm_syc_verify_times_jsons.tml" lasturl="reg_simcomp_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+<!--	<control trans="group5">
+		<url name="reg_passport_up_jsons.tml" id="1" rcode="000000"/>
+		<url name="cm_syc_verify_times_jsons.tml" lasturl="reg_passport_up_jsons" id="1" bean="passControl"/>
+	</control>
+
+	<control trans="group5_1">
+		<url name="cm_syc_verify_times_jsons.tml" id="1" reqlimit="[{'key':'status','value':'F'}]" bean="passControl"/>
+	</control>-->
+
+<!--	<control trans="group6">
+		<url name="tf_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="tf_money_jsons.tml" lasturl="tf_otp_check_jsons" id="1" bean="passControl"/>
+		<url name="tf_itmx_prompt_pay_money_jsons.tml" lasturl="tf_otp_check_jsons" id="1" bean="passControl"/>
+	</control>
+
+	<control trans="group7">
+		<url name="tf_limit_judge_jsons.tml" id="1" rcode="000000" robj="[{'key':'reCode','value':'0002'}]"/>
+		<url name="tf_money_jsons.tml" lasturl="tf_limit_judge_jsons" id="1" bean="passControl"/>
+		<url name="tf_itmx_prompt_pay_money_jsons.tml" lasturl="tf_limit_judge_jsons" id="1" bean="passControl"/>
+	</control>-->
+
+<!-- 	<control trans="group8"> ~~group6
+		<url name="tf_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="tf_itmx_prompt_pay_money_jsons.tml" lasturl="tf_otp_check_jsons" id="1" bean="passControl"/>
+	</control> -->
+
+<!-- 	<control trans="group9"> ~~group7
+		<url name="tf_limit_judge_jsons.tml" id="1" rcode="000000" robj="[{'key':'reCode','value':'0002'}]"/>
+		<url name="tf_itmx_prompt_pay_money_jsons.tml" lasturl="tf_limit_judge_jsons" id="1" bean="passControl"/>
+	</control> -->
+	
+<!--	<control trans="group10">
+		<url name="change_pin_old_pin_check_jsons.tml" id="1" rcode="000000" />
+		<url name="change_pin_jsons.tml" judgeAnd="true" lasturl="change_pin_old_pin_check_jsons" id="1" bean="passControl"/>
+	</control>
+	
+	<control trans="group11">
+		<url name="change_pin_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="change_pin_jsons.tml" judgeAnd="true" lasturl="change_pin_otp_check_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+<!--	<control trans="group12">
+		<url name="cm_syc_verify_times_jsons.tml" id="1" rcode="000000" robj="[{'key':'reqStatus','value':'S'}]"/>
+		<url name="forgot_pin_jsons.tml" lasturl="cm_syc_verify_times_jsons" id="1" bean="passControl"/>
+		<url name="ps_signing_jsons.tml" judgeAnd="true" lasturl="cm_syc_verify_times_jsons" id="1" bean="passControl"/>
+		<url name="reg_ks_cust_jsons.tml" judgeAnd="true" lasturl="cm_syc_verify_times_jsons" id="1" bean="passControl"/>-->
+		<!-- 注册存在电子签名频繁报错的情况, 暂时先不加 -->
+<!--		<url name="reg_cust_jsons.tml" judgeAnd="true" lasturl="cm_syc_verify_times_jsons" id="1" bean="passControl"/>
+		<url name="updev_setpin_jsons.tml" judgeAnd="true" lasturl="cm_syc_verify_times_jsons" id="1" bean="passControl"/>
+	</control> -->
+	
+<!--	<control trans="group13">
+		<url name="ps_agree_agreement_jsons.tml" id="1" rcode="000000"/>
+		<url name="ps_signing_jsons.tml" judgeAnd="true" lasturl="ps_agree_agreement_jsons" id="1" bean="passControl"/>
+	</control>
+	
+	<control trans="group14">
+		<url name="reg_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="reg_ks_cust_jsons.tml" judgeAnd="true" lasturl="reg_otp_check_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+<!--	<control trans="group15">
+		<url name="reg_ocr_verify_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':true}]"/>
+		<url name="reg_ks_cust_jsons.tml" judgeAnd="true" lasturl="reg_ocr_verify_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+<!--	<control trans="group16">
+		<url name="updev_citizen_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="updev_setpin_jsons.tml" judgeAnd="true" lasturl="updev_citizen_otp_check_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+<!--	<control trans="group17">
+		<url name="upemail_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="upemail_cust_jsons.tml" lasturl="upemail_otp_check_jsons" id="1" bean="passControl"/>
+	</control>
+	
+	<control trans="group18">
+		<url name="upemail_cust_jsons.tml" id="1" rcode="000000"/>
+		<url name="upemail_success_jsons.tml" lasturl="upemail_cust_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+<!--	<control trans="group19">
+		<url name="upmobile_dopa_check_jsons.tml" id="1" rcode="000000"/>
+		<url name="upmobile_cust_jsons.tml" judgeAnd="true" lasturl="upmobile_dopa_check_jsons" id="1" bean="passControl"/>
+	</control>
+	
+	<control trans="group20">
+		<url name="upmobile_otp_check_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="upmobile_cust_jsons.tml" judgeAnd="true" lasturl="upmobile_otp_check_jsons" id="1" bean="passControl"/>
+	</control> 
+	-->
+<!--	<control trans="group21">
+		<url name="upmobile_cust_jsons.tml" id="1" rcode="000000" robj="[{'key':'status','value':'PASS'}]"/>
+		<url name="upmobile_success_jsons.tml" lasturl="upmobile_cust_jsons" id="1" bean="passControl"/>
+	</control>-->
+	
+</tiny>

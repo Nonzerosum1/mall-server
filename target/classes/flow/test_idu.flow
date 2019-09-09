@@ -1,0 +1,33 @@
+<flows>
+	<flow id="1" name="script" in="true" type="pri.name:String|pri.age:Integer|pri.sex:String|pri.address:String">
+	
+		pri.name="Tom";
+		pri.age=34;
+		pri.sex="M";
+		pri.address="hangzhou";
+		
+		
+		var user = new User();
+
+		user.setName(pri.name);
+		user.setAge(pri.age);
+		user.setSex(pri.sex);
+		user.setAddress(pri.address);
+		user.setCreateTime(new Date());
+		pri.res:Integer = userService.insert(user);
+		if(pri.res == 0){			return 99;		}else{			return 10;		}
+		
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{
+			"msg":"插入成功"
+		}
+	</flow>
+	
+	<flow id="99" name="view" fail="999" desc="异常视图">
+		{
+			"msg":"插入失败"
+		}
+	</flow>
+</flows>

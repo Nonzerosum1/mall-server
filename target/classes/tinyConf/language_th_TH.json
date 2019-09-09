@@ -1,0 +1,337 @@
+{
+	"i_000000":"Request Is Successful",//"请求成功" ,
+	"i_000001":"Request Parameter Missing",//"必要参数缺失" ,
+
+	"i_100001":"The user does not exist",//"用户不存在" ,
+
+	//29段 程亮
+	"i_290001":"Automatic login failed", //"自动登录失败" ,
+	"i_290002":"Potential users,Registration is prohibited for a short time", //"潜在用户,短时间内禁止注册" ,
+	"i_290003":"Account is locked in login", //"账户被锁定登录" ,
+	"i_290004":"The phone number is already occupied", //"手机号已经被占用" ,
+	"i_290005":"Please resend after ${} seconds", //"请在${}秒后重发" ,
+	"i_290006":"Overdue verification", //"验证次数超限" ,
+	"i_290007":"Age exceeds limit", //"年龄超过限制" ,
+	"i_290008":"Passport has expired", //"护照已到期" ,
+	"i_290009":"User already exists", //"用户已存在" ,
+	"i_290010":"Uninvited user", //"非受邀用户" ,
+	"i_290011":"Risk level not satisfied", //"风险等级不满足" ,
+	"i_290012":"Hit blacklist", //"命中黑名单" ,
+	"i_290013":"Pass the verification and enter the signature process", //"验证通过,进入签名流程" ,
+	"i_290014":"FATCA status does not pass", //"FATCA状态不通过" ,
+	"i_290015":"Information verification failed", //"信息校验失败" ,
+	"i_290016":"Protocol signing failed", //"协议签约失败" ,
+	"i_290017":"File upload failed", //"ecm上传失败" ,
+	"i_290018":"Unknown dictionary type", //"未知的字典类型" ,
+	"i_290019":"HSM service is unavailable", //"HSM服务不可用" ,
+	"i_290020":"Password verification failed", //"密码校验失败" ,
+	"i_290021":"Please re-send the OTP code before verifying", //"请重新发送验证码后进行验证" ,
+	"i_290022":"FATCA service is unavailable", //"FATCA服务不可用" ,
+	"i_290023":"Email service is unavailable", //"邮件服务不可用" ,
+	"i_290024":"BlackList service is unavailable", //"黑名单服务不可用" ,
+	"i_290025":"RM service is unavailable", //"RM服务不可用" ,
+	"i_290026":"Face recognition service is unavailable", //"人脸识别服务不可用" ,
+	"i_290027":"Esignature service is unavailable", //"电子签名服务不可用" ,
+	"i_290028":"Failed to get the image, please try again later", //"获取图片失败,请稍后再试" ,
+	"i_290029":"Email has not certified", //"邮箱未认证" ,
+	
+	"i_290030":"Account is already locked", //"账号已经是锁定状态" ,
+	"i_290031":"Account is already active", //"账号已经是激活状态" ,
+
+	"i_290032":"Email notification has not turned on", //"邮箱通知未开启" ,
+	"i_290033":"The transaction failed, please try again later", //"交易失败,请稍后再试" ,
+
+	"i_291001":"Phone number is unavailable", //"手机号不可用" ,
+	"i_291002":"Account is unavailable", //"账号不可用" ,
+	"i_291003":"Name is unavailable", //"名称不可用" ,
+	"i_291004":"Your information has not changed, no need to modify", //"信息没有改变,不需修改" ,
+	
+	//31段 罗中运
+	"i_310001":"User information not found", //"未找到用户信息" ,
+	"i_310002":"Network error, please retry later",//"网络错误，请稍后再试"(预转账给KS时，KS账户异常时使用),
+	
+	//32段 左泉
+	"i_320001":"Please contact support center", //"账户被系统锁定登录" ,
+	"i_320002":"Password input error more than 3 times", //"密码输入错误3次以上" ,
+	"i_320003":"The reset password cannot be the same as the original password", //"重置的密码不能和原始密码一致" ,
+	"i_320004":"DOPA service is unavailable", //"DOPA服务不可用" 
+	"i_320005":"The ID number is inconsistent, please re-scan!", //"身份证号不一致，请重新扫描！" ,
+	"i_320006":"The mailbox is already occupied", //"邮箱已经被占用" ,
+	"i_320007":"Selfie did not match with your citizen ID card's photo or passport's photo, please scan again.", //"自拍与身份证照片或护照照片不符，请再次扫描。" ,
+	"i_320008":"Smart save is not enabled.", //"智能保存功能没有启用." ,
+	
+	"i_210001":"Gift giving notice", //"礼物领取通知",
+	"i_210002":"Receive the gift. ", //"领取礼物" ,
+	
+	
+	//核心返回码转码
+	"i_400001":"Core return data missing",//核心返回数据缺失
+	
+	"i_401001":"Invalid dictionary value",//无效的字典值
+	"i_401002":"Numerical accuracy is illegal",//数值精度非法
+	"i_401003":"Invalid amount",//无效的金额
+	"i_401004":"Invalid body",//无效的机构
+	"i_401005":"Invalid date format",//无效的日期格式
+	"i_401006":"Repeat request",//重复请求
+	"i_401007":"Parameter not defined",//参数未定义
+	"i_401008":"Date section is illegal",//日期区段非法
+	"i_401009":"The date is not valid",//日期不合法
+	"i_401010":"The transaction amount is illegal",//交易金额不合法
+	"i_401011":"Data has not changed, can not be maintained",//数据未改变,不能维护
+	"i_401012":"The number appears negative",//数字出现负数
+	"i_401999":"Transaction timed out",//交易超时
+	"i_402001":"Account does not exist",//账户不存在
+	"i_402002":"Account balance is not enough",//账户余额不足
+	"i_402003":"Account status is illegal",//账户状态不合法
+	"i_402004":"Customer password is incorrect",//客户密码错误
+	"i_402005":"Business verification failed",//业务验证失败（场景：卡号异常）
+	"i_402006":"Customer certificate format is not legal",//客户证件格式不合法
+	"i_402007":"Attributes Checksum failed, appear mutually exclusive situation",//属性位校验失败，出现互斥情形
+	"i_402008":"Transaction exceeded the quota definition",//交易超出限额定义
+	"i_402009":"Attribute bit verification failed, there are control rules",//属性位校验失败，存在控制规则
+	"i_402010":"The attribute bit is undefined",//属性位未定义
+	"i_402011":"Product not defined",//产品未定义
+	"i_402012":"Abnormal product status",//产品状态异常
+	"i_402013":"Account name is inconsistent",//账户户名不一致
+	"i_402014":"The transaction amount exceeds the product definition",//交易金额超出产品定义
+	"i_402015":"Account balance is beyond the product definition",//账户余额超出产品定义
+	"i_402016":"Interest rates are illegal",//利率不合法
+	"i_402017":"Exchange rate is illegal",//汇率不合法
+	"i_402018":"Account attributes are mutually exclusive",//账户属性互斥
+	"i_402019":"Withdrawal times reach the maximum number of times",//定期支取次数超过限制
+	"i_402020":"Because the current spend card has other accounts, the close account operation is not allowed.",//卡下有其他账户，不允许销户
+	"i_402021":"Card number is not activated.",//卡号未激活
+	"i_402022":"Account has been dormant",//账户为不动户
+	"i_402999":"Other business anomalies",//业务其他异常
+	"i_406001":"The trunk cash balance is not enough",//尾箱现金余额不足
+	"i_406002":"The trunk number section does not exist",//尾箱凭证号段不存在
+	"i_406003":"Teller password is wrong",//柜员密码错误
+	"i_406004":"Trading requires authorization",//交易需要授权
+	"i_406005":"Transaction needs approval",//交易需要审批
+	"i_406006":"Deal has been red",//交易已冲正
+	"i_406007":"Failed to execute flush event",//执行冲正事件失败
+	"i_406008":"Rush is unsuccessful, not registered Rush incident",//冲正失败，未登记冲正事件
+	"i_406009":"Teller no operation authority",//柜员无操作权限
+	"i_406010":"Teller without authorization",//柜员无授权权限
+	"i_406011":"Teller status is abnormal",//柜员状态异常
+	"i_406012":"Institutional hierarchy of counterparty institutions is not legal",//交易机构对手机构的机构层级关系不合法
+	"i_406013":"The reservation status is abnormal",//预约状态异常
+	"i_406014":"Institutions without trading rights",//机构无交易权限
+	"i_406015":"Voucher information is incorrect",//凭证信息有误
+	"i_406016":"Cash information is incorrect",//现金信息有误
+	"i_406017":"The trunk status is abnormal",//尾箱状态异常
+	"i_406018":"Uneven accounting",//账务不平
+	"i_406019":"Internal account name is inconsistent",//内部账户户名不一致
+	"i_406020":"Internal account does not exist",//内部账户不存在
+	"i_406021":"There is a scene transaction fee",//交易存在场景收费
+	"i_406022":"Transaction alarm message exists",//交易存在告警信息
+	"i_406023":"Event code is not exist",//交易码不存在
+	"i_406999":"Other internal abnormalities",//内部其他异常
+	"i_408001":"Data already exists or a primary key conflict is inserted",//数据已存在或者插入主键冲突
+	"i_408002":"Data inserted abnormal",//插入时数据异常
+	"i_408003":"No corresponding record",//无对应记录
+	"i_408004":"There are multiple records",//记录存在多条
+	"i_408005":"Missing updates occurred while data was being maintained",//数据维护时出现丢失更新
+	"i_408999":"Other database anomalies",//数据库其他异常
+	"i_409001":"The information field is not allowed to be blank",//信息域不允许为空
+	"i_409002":"Information domain format is illegal",//信息域格式不合法
+	"i_409003":"Information field length exceeds the limit",//信息域长度超过限制
+	"i_409004":"Illegal file type",//不合法的文件类型
+	"i_409005":"Invalid file size",//不合法的文件大小
+	"i_409006":"File does not exist",//文件不存在
+	"i_409007":"File reading is abnormal",//文件读取异常
+	"i_409008":"File write exception",//文件写入异常
+	"i_409009":"Parsing JSON / XML content error",//解析JSON/XML内容错误
+	"i_409010":"File upload failed",//文件上传失败
+	"i_409011":"File download failed",//文件下载失败
+	"i_409012":"Data area no corresponding data",//数据区无对应数据
+	"i_409013":"Message field verification failed",//信息域校验失败
+	
+	"i_490001":"Core no card information",//核心无卡信息
+	"i_490002":"Core no account information",//核心无账户信息
+	"i_490003":"Inconsistent with the core system of bank information",//与核心系统的银行信息不一致
+	
+	//卡系统返回码转码
+	"i_500001":"",//卡系统返回数据缺失
+	
+	"i_50K001":"Voucher information not found",//未找到凭证信息
+	"i_50K002":"The secondary card is not allowed to do this",//不允许副卡进行此操作
+	"i_50K003":"data error",//数据错误
+	"i_50K004":"This card has expired",//此卡已失效
+	"i_50K005":"This voucher is a secondary card",//此凭证为副卡
+	"i_50K006":"The original transaction has been withdrawn",//原交易已撤销
+	"i_50K007":"No relevant information has been frozen",//没有冻结相关信息
+	"i_50K008":"There is not canceled certificate, refused to sell account",//存在未注销的凭证，拒绝销户
+	"i_50K009":"Has signed automatic repayment, do not repeat",//已签约自动还款,请勿重复操作
+	"i_50K010":"Not signed, can not do this operation",//尚未签约，不能进行此操作
+	"i_50K011":"Validity check error",//有效期检查出错
+	"i_50K012":"Date format is incorrect",//日期格式不正确
+	"i_50K013":"Card number segment parameters are not correct",//卡号段参数不正确
+	"i_50K014":"The card number segment has been generated, does not allow regeneration",//该卡号段已生成，不允许重新生成
+	"i_50K015":"The card number is enabled, does not allow to re-enable",//该卡号段已启用，不允许重新启用
+	"i_50K016":"Input parameters are illegal",//输入参数不合法
+	"i_50K017":"The voucher already exists",//该凭证已经存在
+	"i_50K018":"The master voucher does not exist",//该凭证的主凭证不存在
+	"i_50K019":"Limit over",//额度超限
+	"i_50K020":"Account data is abnormal",//账户数据异常
+	"i_50K021":"Card number to establish a commission",//卡号重复建立委托
+	"i_50K022":"The corresponding business card relationship does not exist or has been lifted",//卡号对应的业务委托关系不存在或已解除
+	"i_50K023":"Unsupported transaction currency",//不支持的交易币种
+	"i_50K024":"Bill is not generated, can not make up bills",//账单未生成，不能补打账单
+	"i_50K025":"Trading currency can not be empty",//交易币种不能为空
+	"i_50K026":"There is no failure of the definition of fee waiver, can not be new",//存在未失效的费用减免定义，不能新建
+	"i_50K027":"The password is set and can not be set repeatedly",//密码已设置,不能重复设置
+	"i_50K028":"Binding automatic repayment account, does not allow rebinding",//已绑定自动还款账户，不允许重新绑定
+	"i_50K029":"No binding automatic repayment account",//没有绑定自动还款账户
+	"i_50K030":"This voucher number already exists",//此凭证号已存在
+	"i_50K031":"The voucher corresponding to the attached voucher does not exist",//附凭证对应的主凭证不存在
+	"i_50K032":"This certificate is abnormal and can not be activated",//此凭证为异常状态，不能进行激活
+	"i_50K033":"Not allowed to downgrade",//不允许降级交易
+	"i_50K034":"On the same day, the account has applied for reimbursement of bills, and does not allow duplicate applications",//当日账号已申请账单补寄，不允许重复申请
+	"i_50K035":"Exceeds the card verification range",//超出发卡方校验范围
+	"i_50K036":"Voucher status is abnormal, does not allow vouchers to be reported",//凭证状态异常,不允许凭证挂失
+	"i_50K037":"Not locked without unlocking",//Not locked without unlocking
+	"i_50K038":"Voucher status is abnormal, does not allow the password to unlock",//凭证状态异常,不允许密码解锁
+	"i_50K039":"Exceeds the maximum adjustable temporary limit",//超过最大可调整临时额度
+	"i_50K040":"Voucher status is abnormal, does not allow voucher lock",//凭证状态异常,不允许凭证锁定
+	"i_50K041":"Voucher status is abnormal, does not allow the certificate to unlock",//凭证状态异常,不允许凭证解锁
+	"i_50K042":"Voucher status is abnormal, password reset is not allowed",//凭证状态异常,不允许密码重置
+	"i_50K043":"Voucher status is abnormal, does not allow to change the voucher password",//凭证状态异常,不允许修改凭证密码
+	"i_50K044":"Voucher status is abnormal, does not allow replacement certificate",//凭证状态异常,不允许补换凭证
+	"i_50K045":"Abnormal account status, does not allow the account to freeze operation",//账号状态异常,不允账户冻结操作
+	"i_50K046":"Abnormal account status, do not allow the account to stop paying",//账号状态异常,不允账户止付操作
+	"i_50K047":"Abnormal account status, not allowed to freeze the operation of the account",//账号状态异常,不允账户解冻结操作
+	"i_50K048":"Abnormal account status, do not allow accounts to stop paying for the operation",//账号状态异常,不允账户解止付操作
+	"i_50K049":"The main card is not activated, does not allow the activation of ancillary cards",//主卡未激活，不允许激活附属卡
+	"i_50K050":"Account is a non-loss account, does not allow write-offs",//账户为非损失类账户，不允许核销
+	"i_50K051":"No account cancellation information on the day of the account, cancellation of write-off operation is not allowed.",//账户当日无账户核销信息，不允许核销撤销操作
+	"i_50K052":"Used, can not be deleted",//已使用，不能删除
+	"i_50K053":"Repayment can not find the original repayment transaction write-off records, bulk ends",//还款撤销找不到原还款交易的冲销记录，批量结束
+	"i_50K054":"cvk_index is not allowed",//不允许cvk_index为空
+	"i_50K055":"Card serial number does not exist",//卡序号不存在
+	"i_50k056":"The card number has been used",//该卡号已经被使用了
+	"i_50k057":"Icore error",//核心错误
+	"i_50k058":"Card status is abnormal",//卡状态异常
+	"i_50K059":"Core transaction flow and card system transaction flow does not match",//核心交易流水和卡系统交易流水不匹配
+	"i_50K060":"Call core transaction failed",//调用核心交易失败
+	"i_50K061":"Account product can not be empty",//账户产品不能为空
+	"i_50k0062":"This card is a virtual card",//该卡为虚拟卡
+	"i_50k0063":"The card has been reported",//该卡已经挂失
+	"i_50k0064":"The card is not reported without hanging up",//该卡未挂失无需解挂
+	"i_50K0065":"Customer number and ID does not match",//客户号和证件不匹配
+	"i_50K0066":"Different product card number",//非同产品卡号
+	"i_50K0067":"Revenue",//已收入
+	"i_50K0068":"No available card number found",//未找到可用的卡号
+	"i_50K0069":"The card did not stop payment",//该卡未作止付
+	"i_50K0070":"The card number does not exist",//该卡号不存在
+	"i_50K0071":"Setting the ECOM flag can not be blank",//设置ECOM标志不能为空
+	"i_50K0072":"Card number can not be empty",//卡号不能为空
+	"i_50k0073":"The ECOM status of the card is that ECOM transactions are not allowed",//该卡号ECOM状态为，不允许进行ECOM交易
+	"i_50K0074":"The ECOM flag is blank and can not be traded on ECOM",//ECOM标志为空，不能进行ECOM交易
+	"i_50K0075":"There is no corresponding database table data",//数据库表没有相对应的数据
+	"i_50K0076":"Non-zero debit card does not allow closecard",//
+	"i_50K077":"Replace card is not allowed within 10 days",//
+	"i_50K0078":"Customer is not allow to unblock the card  within 1 day",//
+	"i_50K0079":"Bank unaudited passed",//未经银行审计的传输
+	"i_50K0080":"This agent does not have permission to set status",//
+	"i_50K0081":"Card not made",//
+	"i_50K0082":"Debit card need to enter the delivery address",//
+	"i_50K0083":"Message failed to be sent",//
+	"i_50k0084":"card status is not UNACTIVE",//
+	"i_50k0085":"Customer is not allow to unblock the card  within 6 hours",// Within hours The number of exceeded
+	"i_50k0086":"Please activate the card first",//
+	"i_50k0089":"There are other accounts under the card, cant't close this card",
+	"i_50K0089":"There are other accounts under the card, cant't close this card",
+	"i_50k0092":"Contact us to resolve issue of new card",
+	"i_509999":"Card system error",//"卡系统错误",
+	
+	//前置返回码转码
+	"i_600001":"",//前置返回数据缺失
+	
+	
+	//第三方返回码转码
+	
+	"i_700101":"Currently can not support cross-bank transfer,please check the account is correct.",//当前不支持跨行转账
+	"i_700102":"Currently, only CIMB bank account transfers are supported. Please check whether the account number is entered correctly.",//当前仅支持CIMB银行账户间转账，请检查账号输入是否正确。
+	"i_700103":"Does not support the current card number bank transfer",//不支持向当前卡号所属银行转账
+	"i_700104":"Currently, inter-bank transfer does not support reservation mode.",//当前跨行转账不支持预约模式。
+	"i_710001":"",//Payoo返回数据缺失
+	
+	"i_720001":"The transaction is declined by Issuer",//交易由发行商拒绝
+	"i_720003":"INVALID MERCHANT",//无效商户
+	"i_720004":"Issuer request to pick-up the card",//
+	"i_720005":"UNABLE TO PROCESS TRANSACTION",//
+	"i_720012":"INVALID TRANSACTION",//
+	"i_720013":"INVALID AMOUNT",//
+	"i_720014":"INVALID CARD NUMBER",//
+	"i_720015":"ISSUER DOES NOT EXIST",//
+	"i_720021":"CARD IS NOT INITIALIZED",//
+	"i_720025":"UNABLE TO LOCATE ORIGINAL TRANSACTION",//
+	"i_720030":"MESSAGE FORMAT ERROR",//
+	"i_720034":"SUSPECTED FRAUD CARD",//
+	"i_720039":"CREDIT ACCOUNT IS INVALID",//
+	"i_720041":"LOST CARD",//
+	"i_720043":"STOLEN CARD",//
+	"i_720051":"INSUFFICIENT BALANCE. TRANSACTION CAN NOT BE COMPLETED",//
+	"i_720053":"INVALID SAVING ACCOUNT",//
+	"i_720054":"EXPIRED CARD",//
+	"i_720055":"INCORRECT PIN",//
+	"i_720057":"TRANSACTION NOT PERMITTED TO CARD HOLDER",//该持卡人不允许交易
+	"i_720058":"TRANSACTION NOT PERMITTED TO TERMINAL",//该终端不允许交易
+	"i_720059":"SUSPECTED TRANSACTION",//高风险交易
+	"i_720061":"EXCEEDS WITHDRAWAL AMOUNT LIMIT",//超过提款金额限制
+	"i_720062":"RESTRICTED CARD",//
+	"i_720063":"SECURITY VIOLATION",//
+	"i_720064":"INCORRECT ORIGINAL AMOUNT",//
+	"i_720065":"EXCEED WITHDRAWAL FREQUENCY LIMIT",//
+	"i_720068":"RECEIVED RESPONSE WAS TIME OUT",//请求超时
+	"i_720075":"EXCEED ALLOWABLE NUMBER OF PIN TRIES",//
+	"i_720076":"INVALID ACCOUNT",//
+	"i_720084":"ARQC VALIDATIN ERROR",//ARQC校验失败
+	"i_720085":"NO CVM IS DECLINED BY ISSUER, PIN ENTER IS REQUIRED.",//由于没有CVM被发行人拒绝，需要输入密码。
+	"i_720090":"CUT OFF IS IN PROGRESS. CAN NOT PROCEED THE TRANSACTION",//
+	"i_720091":"TRANSACTION PROCESSING SYSTEM IS NOT READY",//
+	"i_720092":"FINANCIAL INSTITUTION NETWORK FACILITY CANNOT BE FOUND",//
+	"i_720094":"DUPLICATE TRANSACTION",//
+	"i_720096":"ORIGINAL TRANSACTION IS DUPLICATED. CAN NOT PROCEED THE TRANSACTION",//
+	"i_72001068":"TIME OUT! CANNOT PROCEED THE TRANSACTION",
+
+	"i_730001":"OTP:Other Error",
+	"i_730003":"OTP:Invalid Phone Number",
+	"i_730004":"OTP:Exceeds Message Length",
+	"i_730007":"OTP:Invalid Telco",
+	"i_730008":"OTP:Spam Message",
+	"i_730009":"OTP:Invalid BrandName",
+	
+	
+	"i_999900":"Unexpected error",//"出乎意料的错误",
+	"i_999901":"Icore system error",//"核心错误",
+	"i_999902":"Card system error",//"卡系统错误",
+	"i_999903":"Front error",//"前置错误",
+	"i_999904":"OTP connection failed",//"OTP连接失败",
+	"i_999905":"Agent error",//"代理错误",
+	"i_999906":"Service has some problems, please restart APP",//"解密失败强制重启",
+	"i_999907":"The connection you have established has timed out and we have reestablished the connection for you",//"您建立的访问连接已经超时,我们已经为您重新建立连接",
+	"i_999908":"Request interface does not exist or has closed access",//"请求接口不存在或已关闭访问",
+	"i_999909":"The registration has been restarted on another device, the current device information has expired",//"已在另外一台设备上重新开始注册，当前设备信息已失效.",
+	"i_999910":"The verification status has expired. Please initiate the verification request again", //"验证状态已失效,请再次发起验证请求" ,
+	
+	"i_999996":"Abnormal parameters",//"异常的参数" ,
+	"i_999997":"logout",//退出登录
+	"i_999998":"Fail to connect. Please try again",//"连接失败，请重新尝试一次" ,
+	"i_999999":"Wrong system",//"系统错误" ,
+	
+	"":""
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<flows>
+	<flow id="1" name="script" in="true">
+		return 10;
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{			"msg":"success"
+		}
+	</flow>
+</flows>

@@ -1,0 +1,88 @@
+<flows>
+	<flow id="1" name="script" in="true">
+		var data = pri.jsonsObj;
+		if((tls.isNull(data.typeId) || tls.isNull(data.markPro)) && (tls.isNull(data.goodName) || tls.isNull(data.goodDec) || 
+		tls.isNull(data.originalPrice) || tls.isNull(data.goodPrice) || tls.isNull(data.goodStock) || tls.isNull(data.typeId)) && 
+		(tls.isNull(data.cateId) || tls.isNull(data.markCate))){
+			tls.returnFun("000001",ct);
+			return;
+		}
+		pri.typeId = data.typeId;
+		pri.markPro = data.markPro;
+		pri.goodName = data.goodName;
+		pri.goodDec = data.goodDec;
+		pri.originalPrice = data.originalPrice;
+		pri.goodPrice = data.goodPrice;
+		pri.goodStock = data.goodStock;
+		
+		pri.markCate = data.markCate;
+		pri.cateId = data.cateId;
+		
+		if(pri.markPro == "get_products_info"){			return get_products_info;		}else if(pri.markPro == "insert_products"){			return insert_products;		}else if(pri.markCate == "delete_pro"){ 			return delete_pro;		}
+		
+	</flow>
+	
+	<flow id="get_products_info" name="script">
+		pri.proList = tGoodsService.getAllPros((pri.typeId).toString());
+		pub.goodType = pri.typeId;
+		var robj = {};
+		robj.productList = [];
+		pri.proList.forEach(function(obj){			var product = {};
+			var tGoodImg:TGoodImage = tGoodImageService.getProImage(obj.goodId);
+			
+			if(!tls.isNull(tGoodImg)){				product.goodImg = tGoodImg.imageUrl;			}
+			product.id = obj.id;
+			product.goodId = obj.goodId;
+			product.goodName = obj.goodName;
+			product.goodDesc = obj.goodDesc;
+			product.goodPrice = obj.goodPrice;
+			product.goodType = obj.goodType;
+			product.goodStock = obj.goodStock;
+			product.originalPrice = obj.originalPrice;
+			
+			robj.productList.push(product);		});
+		tls.returnFun("000000", robj, ct);
+		return;
+	</flow>
+	
+	<flow id="insert_products" name="script">
+		var tGood:TGoods = new TGoods();
+		pri.id = DataUtil.getUUID();
+		pri.goodId = tGoodsService.getMaxGoodId(pri.typeId);
+		tGood.setId(pri.id);
+		tGood.setCreateDate(new Date());
+		tGood.setModifyDate(new Date());
+		tGood.setGoodId(pri.goodId);
+		tGood.setGoodName(pri.goodName);
+		tGood.setGoodDesc(pri.goodDec);
+		tGood.setGoodPrice(pri.goodPrice);
+		tGood.setGoodType(pri.typeId);
+		tGood.setGoodStock(pri.goodStock);
+		tGood.setOriginalPrice(pri.originalPrice);
+		tGood.setDel("0");
+		tGoodsService.insert(tGood);
+		tls.returnFun("000000", ct);
+		return;
+	</flow>
+	
+	<flow id="delete_pro" name="script">
+		var res:Integer = tGoodsService.deleteByPK((pri.cateId).toString());
+		if(!tls.isNull(res)){
+			if(res > 0){
+				tls.returnFun("000000",ct);
+				return;
+			}else{
+				tls.returnFun("408005",ct);
+				return;
+			}
+		}else{
+			tls.returnFun("408005",ct);
+			return;
+		}
+	</flow>
+
+	<flow id="10" name="view" fail="999" desc="异常视图">
+		{
+		}
+	</flow>
+</flows>
